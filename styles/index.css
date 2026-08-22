@@ -1,0 +1,13 @@
+#img-container1 {
+    background-image: url(../src/img/containers/image1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#img-container2 {
+    background-image: url(../src/img/containers/image2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

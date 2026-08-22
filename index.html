@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles/containers.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/index.css">
+
+    <title>Restaurant Grill Template</title>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-logo">NEW YORK'S GRILL</div>
+
+        <button class="navbar-toggle" onclick="toggleMenu()">&#9776;</button>
+
+        <div class="navbar-links" id="navbarLinks">
+            <a href="#inicio">Inicio</a>
+            <a href="#historia">Historia</a>
+            <a href="#menu">Menú</a>
+            <a href="#galeria">Galería</a>
+            <a href="#reservas">Reservar</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="header" id="inicio">
+            <h1>NEW YORK'S GRILL</h1>
+            <p>Carnes a la brasa, sabor auténtico y el espíritu de un asador neoyorquino en el corazón de la ciudad.</p>
+            <a href="#reservas" class="cta-button">Reservar mesa</a>
+        </div>
+
+        <div class="primary-container" id="historia">
+            <h2>Nuestra Historia</h2>
+            <p>Desde 2010, New York's Grill lleva a la mesa la esencia de los grandes asadores americanos.
+                Seleccionamos cada corte con mimo, lo maduramos en cámara propia y lo cocinamos al carbón
+                para conseguir ese punto ahumado que nos caracteriza. Más que un restaurante, somos un
+                punto de encuentro donde la buena carne y la buena compañía van siempre de la mano.</p>
+        </div>
+
+        <div class="primary-container" id="menu">
+            <h2>Nuestro Menú</h2>
+            <p>Una selección de nuestros platos más pedidos, preparados al momento en nuestra parrilla de carbón.</p>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <span class="dish">Chuletón madurado 45 días
+                        <span class="dish-desc">Angus black, sal en escamas, mantequilla trufada</span>
+                    </span>
+                    <span class="price">32€</span>
+                </div>
+                <div class="menu-item">
+                    <span class="dish">Costillar BBQ
+                        <span class="dish-desc">Glaseado con salsa de la casa, coleslaw</span>
+                    </span>
+                    <span class="price">24€</span>
+                </div>
+                <div class="menu-item">
+                    <span class="dish">Burger New York's
+                        <span class="dish-desc">Doble smash, cheddar curado, cebolla caramelizada</span>
+                    </span>
+                    <span class="price">16€</span>
+                </div>
+                <div class="menu-item">
+                    <span class="dish">Alitas a la brasa
+                        <span class="dish-desc">Marinado 24h, salsa picante ahumada</span>
+                    </span>
+                    <span class="price">14€</span>
+                </div>
+                <div class="menu-item">
+                    <span class="dish">Tartar de ternera
+                        <span class="dish-desc">Corte a cuchillo, yema curada, mostaza antigua</span>
+                    </span>
+                    <span class="price">15€</span>
+                </div>
+                <div class="menu-item">
+                    <span class="dish">Secreto ibérico
+                        <span class="dish-desc">A la brasa, reducción de Pedro Ximénez</span>
+                    </span>
+                    <span class="price">19€</span>
+                </div>
+                <div class="menu-item">
+                    <span class="dish">Entrecot de wagyu
+                        <span class="dish-desc">200g, sal ahumada, mantequilla de hierbas</span>
+                    </span>
+                    <span class="price">38€</span>
+                </div>
+                <div class="menu-item">
+                    <span class="dish">Patatas asadas al carbón
+                        <span class="dish-desc">Alioli casero, cebollino</span>
+                    </span>
+                    <span class="price">8€</span>
+                </div>
+                <div class="menu-item">
+                    <span class="dish">Mazorca de maíz a la brasa
+                        <span class="dish-desc">Mantequilla ahumada, parmesano</span>
+                    </span>
+                    <span class="price">7€</span>
+                </div>
+                <div class="menu-item">
+                    <span class="dish">Ensalada César con pollo grillado
+                        <span class="dish-desc">Parmesano, picatostes, aliño de la casa</span>
+                    </span>
+                    <span class="price">13€</span>
+                </div>
+                <div class="menu-item">
+                    <span class="dish">Cheesecake ahumado
+                        <span class="dish-desc">Base de galleta, coulis de frutos rojos</span>
+                    </span>
+                    <span class="price">7€</span>
+                </div>
+                <div class="menu-item">
+                    <span class="dish">Brownie con helado
+                        <span class="dish-desc">Chocolate 70%, helado de vainilla</span>
+                    </span>
+                    <span class="price">6€</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="split2-container" id="galeria">
+            <div id="img-container1">
+                <div class="img-caption">Nuestro salón</div>
+            </div>
+            <div id="img-container2">
+                <div class="img-caption">Directo del carbón</div>
+            </div>
+        </div>
+
+        <div class="secondary-container">
+            <h2>Por qué elegirnos</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <span class="feature-number">15+</span>
+                    <p>Años sirviendo a la brasa el mejor sabor de la ciudad</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-number">100%</span>
+                    <p>Carne de proveedores locales seleccionados</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-number">4.8★</span>
+                    <p>Valoración media de nuestros clientes</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-number">30k+</span>
+                    <p>Platos servidos cada año</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="primary-container" id="reservas">
+            <h2>Reserva tu mesa</h2>
+            <p>Dinos cuántos sois y te asignamos mesa al instante.</p>
+
+            <form id="form-reserva" class="form-reserva">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="tel" name="telefono" placeholder="Teléfono" required>
+                <input type="number" name="personas" placeholder="Nº de personas" min="1" max="20" required>
+                <input type="date" name="fecha" id="input-fecha" required>
+                <select name="hora" required>
+                    <option value="" disabled selected>Elige una hora</option>
+                    <option value="13">13:00</option>
+                    <option value="14">14:00</option>
+                    <option value="15">15:00</option>
+                    <option value="16">16:00</option>
+                    <option value="17">17:00</option>
+                    <option value="18">18:00</option>
+                    <option value="19">19:00</option>
+                    <option value="20">20:00</option>
+                    <option value="21">21:00</option>
+                    <option value="22">22:00</option>
+                    <option value="23">23:00</option>
+                </select>
+                <button type="submit">Reservar</button>
+            </form>
+
+            <div id="reserva-mensaje" class="reserva-mensaje"></div>
+        </div>
+
+        <div class="secondary-container" id="contacto">
+            <h2>Lo que dicen de nosotros</h2>
+            <p class="testimonial">"El mejor chuletón que he probado en años. El punto de la brasa es
+                exactamente el que buscaba, y el ambiente hace que quieras quedarte toda la noche."</p>
+            <p class="testimonial-author">— Marta G., cliente habitual</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>New York's Grill</h3>
+                <p>Paseo Independencia 24</p>
+                <p>Zaragoza, España</p>
+            </div>
+            <div class="footer-column">
+                <h3>Horario</h3>
+                <p>Lunes a Jueves: 13:00 - 23:30</p>
+                <p>Viernes a Domingo: 13:00 - 00:30</p>
+            </div>
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <a href="tel:+34976000000">+34 976 000 000</a>
+                <a href="mailto:reservas@nygrill.es">reservas@nygrill.es</a>
+            </div>
+            <div class="footer-column">
+                <h3>Síguenos</h3>
+                <a href="/">Instagram</a>
+                <a href="/">Facebook</a>
+                <a href="/">TripAdvisor</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 New York's Grill. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="scripts/scripts.js"></script>
+</body>
+
+</html>

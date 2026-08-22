@@ -1,0 +1,127 @@
+:root {
+    --main-color: #d67a2c;
+    --dark: #1b1a1a;
+    --libre: #f4f4f4;
+    --ocupada: #d64545;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: var(--dark);
+}
+
+.topbar {
+    background-color: var(--dark);
+    color: white;
+    padding: 1.2rem 2rem;
+}
+
+.topbar h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.panel-container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.fecha-selector {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.fecha-selector input {
+    padding: 0.6rem 1rem;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.tabla-scroll {
+    overflow-x: auto;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.tabla-reservas {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 900px;
+}
+
+.tabla-reservas th,
+.tabla-reservas td {
+    border: 1px solid #e5e5e5;
+    padding: 0.7rem;
+    text-align: center;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.tabla-reservas thead th {
+    background-color: var(--dark);
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+.asientos-th {
+    font-weight: normal;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.hora-td {
+    background-color: var(--dark);
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+td.libre {
+    background-color: var(--libre);
+}
+
+td.ocupada {
+    background-color: #fbe3e3;
+    line-height: 1.4;
+}
+
+.libre-label {
+    color: #999;
+}
+
+td.ocupada form {
+    margin-top: 0.4rem;
+}
+
+td.ocupada form button {
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    padding: 0.35rem;
+    font-size: 12px;
+    background-color: var(--ocupada);
+    color: white;
+    cursor: pointer;
+}
+
+td.ocupada form button:hover {
+    background-color: #b53434;
+}
+
+@media (max-width: 700px) {
+    .panel-container {
+        padding: 0 0.8rem;
+    }
+}

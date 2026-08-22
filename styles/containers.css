@@ -1,0 +1,371 @@
+:root {
+    --primary-background: white;
+    --secondary-background: black;
+}
+
+.header {
+    background-image: url(../src/img/header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    text-align: center;
+    align-content: center;
+
+    height: 900px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.header h1{
+    font-family: 'Righteous', sans-serif;
+    font-size: 90px;
+    color: white;
+    text-shadow: 4px 4px 0 black;
+    margin: 0;
+}
+
+.header p {
+    font-size: 26px;
+    color: white;
+    text-shadow: 2px 2px 0 black;
+    max-width: 600px;
+    margin: 0;
+}
+
+.header .cta-button {
+    margin-top: 1rem;
+    padding: 1rem 2.5rem;
+    background-color: #d67a2c;
+    color: white;
+    font-family: 'Righteous', sans-serif;
+    font-size: 18px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.header .cta-button:hover {
+    background-color: #b5601c;
+}
+
+.primary-container {
+    min-height: 500px;
+    background-color: var(--primary-background);
+    color: #1b1a1a;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 3rem;
+    gap: 1.5rem;
+}
+
+.primary-container h2 {
+    font-family: 'Righteous', sans-serif;
+    font-size: 48px;
+    margin: 0;
+}
+
+.primary-container p {
+    font-size: 20px;
+    max-width: 800px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.menu-grid {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px dashed #ccc;
+    padding-bottom: 0.5rem;
+}
+
+.menu-item .dish {
+    font-size: 22px;
+}
+
+.menu-item .dish-desc {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #777;
+    letter-spacing: 0;
+}
+
+.menu-item .price {
+    font-family: 'Righteous', sans-serif;
+    font-size: 20px;
+    color: #d67a2c;
+}
+
+.secondary-container {
+    min-height: 500px;
+    background-color: var(--secondary-background);
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 3rem;
+    gap: 2rem;
+}
+
+.secondary-container h2 {
+    font-family: 'Righteous', sans-serif;
+    font-size: 44px;
+    color: #d67a2c;
+    margin: 0;
+}
+
+.features-grid {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 200px;
+}
+
+.feature-item .feature-number {
+    font-family: 'Righteous', sans-serif;
+    font-size: 40px;
+    color: #d67a2c;
+}
+
+.feature-item p {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.testimonial {
+    max-width: 700px;
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    font-family: 'Righteous', sans-serif;
+    font-size: 16px;
+    color: #d67a2c;
+}
+
+.form-reserva {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.form-reserva input {
+    padding: 0.9rem 1rem;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}
+
+.form-reserva select {
+    padding: 0.9rem 1rem;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    color: #333;
+}
+
+.form-reserva input:focus,
+.form-reserva select:focus {
+    outline: none;
+    border-color: #d67a2c;
+}
+
+.form-reserva button {
+    padding: 1rem;
+    font-size: 17px;
+    font-family: 'Righteous', sans-serif;
+    background-color: #d67a2c;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-reserva button:hover {
+    background-color: #b5601c;
+}
+
+.reserva-mensaje {
+    margin-top: 1rem;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    max-width: 420px;
+}
+
+.reserva-mensaje.ok {
+    color: #2f8f4f;
+}
+
+.reserva-mensaje.error {
+    color: #c94444;
+}
+
+.split2-container{
+    min-height: 500px;
+    
+    display: grid;
+    grid-template-columns: 40% auto;
+
+    gap: 2rem;
+}
+
+.split2-container div{
+    background-color: var(--primary-background);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.split2-container .img-caption {
+    width: 100%;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+    color: white;
+    font-family: 'Righteous', sans-serif;
+    font-size: 22px;
+}
+
+.transparent-container {
+    min-height: 500px;
+}
+
+.footer {
+    width: 100%;
+    background-color: #0f0e0e;
+    color: white;
+    padding: 4rem 4rem 2rem 4rem;
+    margin-top: 2rem;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2.5rem;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.footer-column h3 {
+    font-family: 'Righteous', sans-serif;
+    font-size: 20px;
+    color: #d67a2c;
+    margin: 0 0 1rem 0;
+}
+
+.footer-column p,
+.footer-column a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.footer-column a:hover {
+    color: #d67a2c;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .header h1 {
+        font-size: 50px;
+    }
+
+    .header p {
+        font-size: 18px;
+        padding: 0 1rem;
+    }
+
+    .primary-container h2,
+    .secondary-container h2 {
+        font-size: 32px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .split2-container {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .split2-container div {
+        min-height: 300px;
+    }
+
+    .testimonial {
+        font-size: 18px;
+    }
+
+    .footer {
+        padding: 3rem 2rem 2rem 2rem;
+    }
+
+    .footer-grid {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
