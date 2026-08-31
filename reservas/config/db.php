@@ -7,44 +7,54 @@
 // hPanel > Bases de datos > MySQL).
 // ============================================================
 
-$host = $_ENV['DB_HOST'] ?? 'host-proporcionado-por-el-server';
-$db   = $_ENV['DB_NAME'] ?? 'nombre_bd';
-$user = $_ENV['DB_USER'] ?? 'usuario_bd';
-$pass = $_ENV['DB_PASS'] ?? 'password_bd';
-$charset = 'utf8mb4';
+// $host = $_ENV['DB_HOST'] ?? 'host-proporcionado-por-el-server';
+// $db   = $_ENV['DB_NAME'] ?? 'nombre_bd';
+// $user = $_ENV['DB_USER'] ?? 'usuario_bd';
+// $pass = $_ENV['DB_PASS'] ?? 'password_bd';
+// $charset = 'utf8mb4';
 
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+// $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+
+// try {
+//     $pdo = new PDO($dsn, $user, $pass, [
+//         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+//         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+//     ]);
+// } catch (PDOException $e) {
+//     die('Error de conexión a la base de datos.');
+// }
+
+$dbFile = __DIR__ . '/../database.sqlite';
 
 try {
-    $pdo = new PDO($dsn, $user, $pass, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-    ]);
+    $pdo = new PDO("sqlite:" . $dbFile);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    die('Error de conexión a la base de datos.');
+    die('Error al conectar con la base de datos: ' . $e->getMessage());
 }
 
 $pdo->exec("
     CREATE TABLE IF NOT EXISTS mesas (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        nombre VARCHAR(50) NOT NULL,
-        asientos INT NOT NULL
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nombre TEXT NOT NULL,
+        asientos INTEGER NOT NULL
+    );
 ");
 
 $pdo->exec("
     CREATE TABLE IF NOT EXISTS reservas (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        mesa_id INT NOT NULL,
-        nombre VARCHAR(100) NOT NULL,
-        telefono VARCHAR(30) NOT NULL,
-        personas INT NOT NULL,
-        fecha DATE NOT NULL,
-        hora TINYINT NOT NULL,
-        estado VARCHAR(20) NOT NULL DEFAULT 'activa',
-        creado_en DATETIME NOT NULL,
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        mesa_id INTEGER NOT NULL,
+        nombre TEXT NOT NULL,
+        telefono TEXT NOT NULL,
+        personas INTEGER NOT NULL,
+        fecha TEXT NOT NULL,
+        hora INTEGER NOT NULL,
+        estado TEXT NOT NULL DEFAULT 'activa',
+        creado_en TEXT NOT NULL,
         FOREIGN KEY (mesa_id) REFERENCES mesas(id)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    );
 ");
 
 // Siembra mesas de ejemplo SOLO la primera vez (si la tabla está vacía).

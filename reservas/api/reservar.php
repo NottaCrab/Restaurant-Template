@@ -47,18 +47,27 @@ if ($fecha === $hoy->format('Y-m-d') && $hora < (int) date('G')) {
     exit;
 }
 
-// No permitir una segunda reserva activa con el mismo teléfono
-// hasta que la anterior (fecha + hora) ya haya pasado 
-// que por alguna razón no funciona
+// --- Comprobación de reserva activa por teléfono ---
+// Pasamos $fechaHoy y $horaActual desde PHP para compatibilidad total con SQLite
+$fechaHoy = date('Y-m-d');
+$horaActual = (int) date('G');
+
 $stmtTelefono = $pdo->prepare("
     SELECT fecha, hora
     FROM reservas
     WHERE telefono = :telefono
       AND estado = 'activa'
-      AND (fecha > CURDATE() OR (fecha = CURDATE() AND hora >= HOUR(NOW())))
+      AND (
+          fecha > :fecha_hoy 
+          OR (fecha = :fecha_hoy AND hora >= :hora_actual)
+      )
     LIMIT 1
 ");
-$stmtTelefono->execute(['telefono' => $telefono]);
+$stmtTelefono->execute([
+    'telefono' => $telefono,
+    'fecha_hoy' => $fechaHoy,
+    'hora_actual' => $horaActual,
+]);
 $reservaExistente = $stmtTelefono->fetch(PDO::FETCH_ASSOC);
 
 if ($reservaExistente) {
@@ -68,7 +77,7 @@ if ($reservaExistente) {
     exit;
 }
 
-// Buscar la mesa más pequeña que quepa y esté libre en esa fecha+hora concretas
+// --- Buscar la mesa disponible ---
 $stmt = $pdo->prepare("
     SELECT id, nombre, asientos
     FROM mesas

@@ -160,8 +160,10 @@
 
             <form id="form-reserva" class="form-reserva">
                 <input type="text" name="nombre" placeholder="Nombre" required>
-                <input type="tel" name="telefono" placeholder="Teléfono" required>
-                <input type="number" name="personas" placeholder="Nº de personas" min="1" max="20" required>
+                <input type="tel" name="telefono" id="telefono" pattern="[0-9]{9}" maxlength="9"
+                    placeholder="Teléfono (Ej: 612345678)" oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                    required> <input type="number" name="personas" placeholder="Nº de personas" min="1" max="20"
+                    required>
                 <input type="date" name="fecha" id="input-fecha" required>
                 <select name="hora" required>
                     <option value="" disabled selected>Elige una hora</option>
