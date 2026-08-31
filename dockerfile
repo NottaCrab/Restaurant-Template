@@ -9,6 +9,11 @@ RUN a2enmod rewrite
 # Copiar archivos del proyecto
 COPY . /var/www/html/
 
+# Configurar DirectoryIndex para que Apache sirva index.php automáticamente
+# en cualquier directorio (por ejemplo, /reservas/), con index.html como respaldo
+RUN echo "DirectoryIndex index.php index.html" > /etc/apache2/conf-available/directory-index.conf \
+ && a2enconf directory-index
+
 # Desactivar la adición de puertos internos en redirecciones automáticas de Apache
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf \
  && echo "UseCanonicalName Off" >> /etc/apache2/apache2.conf \
