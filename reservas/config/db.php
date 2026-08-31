@@ -7,16 +7,21 @@
 // hPanel > Bases de datos > MySQL).
 // ============================================================
 
-$host = '127.0.0.1';
-$dbname = 'reservas_db';
-$user = 'usuario_php';
-$pass = 'tu_contraseña';
+$host = $_ENV['DB_HOST'] ?? 'host-proporcionado-por-el-server';
+$db   = $_ENV['DB_NAME'] ?? 'nombre_bd';
+$user = $_ENV['DB_USER'] ?? 'usuario_bd';
+$pass = $_ENV['DB_PASS'] ?? 'password_bd';
+$charset = 'utf8mb4';
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = new PDO($dsn, $user, $pass, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+    ]);
 } catch (PDOException $e) {
-    die('Error al conectar con la base de datos: ' . $e->getMessage());
+    die('Error de conexión a la base de datos.');
 }
 
 $pdo->exec("
