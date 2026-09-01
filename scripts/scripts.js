@@ -25,7 +25,7 @@ if (formReserva) {
 
         try {
             const datos = new FormData(formReserva);
-            const respuesta = await fetch('reservas/api/reservar.php', {
+            const respuesta = await fetch('/reservas/api/reservar.php', {
                 method: 'POST',
                 body: datos
             });
